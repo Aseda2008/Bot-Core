@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+#header {
+  background: #ffffffe5;
+  padding: 10px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+      width: clamp(1rem, 2.5vw, 2rem);
+      height: clamp(1rem, 2.5vw, 2rem);
+    }
+    &--nav {
+      display: flex;
+      gap:clamp(1rem, 2.5vw, 2rem);
+      a {
+        font-family: "Roboto", sans-serif;
+        font-weight:clamp(1rem, 2.5vw, 2rem);
+        font-size:clamp(1rem, 2.5vw, 2rem);
+        color: #274c5b;
+      }
+      select{
+        font-family: "Roboto", sans-serif;
+        font-weight:clamp(1rem, 2.5vw, 2rem);
+        font-size:clamp(1rem, 2.5vw, 2rem);
+        color: #274c5b;
+        border: none;
+      }
+    }
+    &--block {
+      display: flex;
+      gap: 10px;
+      &__search {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        position: relative;
+        input {
+          width: clamp(1rem, 2.5vw, 2rem);
+          font-size: clamp(1rem, 2.5vw, 2rem);
+        //   border: 1px solid #e0e0e0;
+          outline: none;
+          height: clamp(1rem, 2.5vw, 2rem);
+          border-radius:clamp(1rem, 2.5vw, 2rem);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: clamp(1rem, 2.5vw, 2rem);
+        }
+        a {
+          position: absolute;
+          top: 7px;
+          right: 7px;
+          width: clamp(1rem, 2.5vw, 2rem);
+          height: clamp(1rem, 2.5vw, 2rem);
+          border-radius: 50%;
+          background: #7eb693;
+          color: white;
+          font-size: clamp(1rem, 2.5vw, 2rem);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      &__card {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        width: clamp(1rem, 2.5vw, 2rem);
+        height: clamp(1rem, 2.5vw, 2rem);
+        border: 1px solid #e0e0e0;
+        padding: clamp(1rem, 2.5vw, 2rem);
+        border-radius: 25px;
+        position: relative;
+        a {
+          position: absolute;
+          top: 7px;
+          left: 7px;
+          width:clamp(1rem, 2.5vw, 2rem);
+          height:clamp(1rem, 2.5vw, 2rem);
+          border-radius: 50%;
+          background: #7eb693;
+          color: white;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #e0e0e0;
+        }
+        p {
+            font-weight:clamp(1rem, 2.5vw, 2rem);
+            font-size: clamp(1rem, 2.5vw, 2rem);
+          position: absolute;
+          left: clamp(1rem, 2.5vw, 2rem);
+          font-family: "Roboto", sans-serif;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+input {
+  border: none;
+  cursor: pointer;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100vh;
+  footer{
+    margin-top: 0 auto;
+  }
+}
