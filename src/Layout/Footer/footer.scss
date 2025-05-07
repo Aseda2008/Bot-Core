@@ -2,44 +2,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap");
 #footer {
   .footer {
+    position: relative;
+    img {
+      width: clamp(22rem, 90vw, 90.1rem);
+      height: clamp(20rem, 25vw, 40rem);
+      object-fit: contain;
+    }
     &--block {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 20px;
+      position: absolute;
+      bottom: clamp(7rem, 7.99vw, 9rem);
+      top: clamp(7rem, 7.99vw, 9rem);
       h1 {
         font-family: "Roboto", sans-serif;
-        font-weight: 800;
-        font-size: 50px;
-        margin-top: 74px;
+        font-weight: 700;
+        font-size: clamp(0.1rem, 4vw, 4.3rem);
         color: white;
+        width: clamp(10rem, 40vw, 50rem);
       }
       &__sub {
         display: flex;
         gap: 10px;
         align-items: center;
-        margin-top: 55px;
-
         input {
-          width: 349px;
-          height: 45px;
-          padding: 5px 10px;
+          width: clamp(3rem, 25vw, 30rem);
+          height: clamp(1rem, 3vw, 4.3rem);
+          padding: clamp(0.1rem, 0.5vw, 0.8rem);
           background: white;
           border-radius: 10px;
           outline: none;
-          font-size: 20px;
-          border: 1px solid #e4e0e0;
+          font-size: clamp(0.4rem, 1.5vw, 1.8rem);
         }
         button {
           font-family: "Roboto", sans-serif;
           font-weight: 700;
-          font-size: 20px;
+          font-size: clamp(0.4rem, 1.5vw, 1.8rem);
           background: #274c5b;
           color: white;
           outline: none;
-          height: 55px;
-          width: 190px;
+          height: clamp(1rem, 4vw, 4.3rem);
+          width: clamp(0rem, 15vw, 30rem);
           border-radius: 10px;
+          padding: clamp(0.1rem, 0.5vw, 0.8rem);
         }
       }
     }
@@ -48,28 +54,28 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    margin: 50px 0;
     h1 {
       font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-size: 30px;
+      font-weight: 600;
+      font-size: clamp(1rem, 2.5vw, 3rem);
       color: #525c60;
       margin-bottom: 15px;
     }
     p {
       font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-size: 15px;
+      font-weight: 500;
+      font-size: clamp(0.5rem, 1.3vw, 1.5rem);
       color: #525c60;
     }
     &--left {
+      margin-right: 10px;
       text-align: right;
       h4 {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        font-size: 18px;
+        font-size: clamp(0.5rem, 1.5vw, 2rem);
         color: #2b2c2c;
-        margin-top: 20px;
+        margin-top: clamp(0.5rem, 1.5vw, 2rem);
       }
     }
     &--center {
@@ -77,17 +83,21 @@
       p {
         margin: 20px 0;
       }
+      img {
+        width: clamp(5rem, 15vw, 18rem);
+      }
       &__circle {
         display: flex;
         gap: 10px;
         align-items: center;
         justify-content: center;
         a {
-          width: 60px;
-          height: 60px;
-          background: #eff6f1;
+          width: clamp(1rem, 4vw, 5rem);
+          height: clamp(1rem, 4vw, 5rem);
           border-radius: 50%;
-          font-size: 25px;
+          background: #e0e0e0;
+          color: #274c5b;
+          font-size: clamp(0.5rem, 2vw, 2.5rem);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -95,27 +105,29 @@
       }
     }
     &--rigth {
+      margin-left: 10px;
       p {
-        margin-bottom: 20px;
+        margin-top: clamp(0.5rem, 1.5vw, 2rem);
       }
     }
     &--line {
       width: 1px;
-      height: 250px;
+      height: clamp(9rem, 23vw, 30rem);
       background: #d4d4d4;
     }
   }
   .bottom {
-    border-top: 1.5px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: clamp(2rem, 5vw, 5.4rem);
     p {
       font-family: "Roboto", sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      color: #525C60;
-      padding: 20px;
+      font-size: clamp(0.5rem, 1.3vw, 1.5rem);
+      color: #525c60;
+      padding: 10px;
     }
   }
 }

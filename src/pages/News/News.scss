@@ -1,0 +1,38 @@
+#news{
+    img{
+        width: clamp(22rem, 100vw, 100.9rem);
+      height: clamp(6rem, 25vw, 40rem);
+    }
+    .contaner{
+        display: grid;
+        place-items: center;
+        margin-inline: 1.5rem;
+        padding-block: 5rem;
+         .news{
+        display: grid;
+        row-gap: 3.5rem; 
+        &--card{
+            position: relative;
+            img{
+                width: 328px;
+                border-radius: 1.5rem;
+            }
+            &__text{
+                width: 280px;
+                background: #e8dfdf98;
+                padding: 1.5rem 2rem;
+                box-shadow: 0 8px 22 hsla(0,0%,0%,.15);
+                border-radius: 1rem;
+                position: absolute;
+                left: 0;
+                right: 0;   
+                border: -2rem;
+                margin-inline: auto;
+                // opacity: 0;
+                transition: opacity 1s 1s;
+            }
+        }
+    }
+    }
+   
+}

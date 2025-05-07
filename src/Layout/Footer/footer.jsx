@@ -6,16 +6,8 @@ const Footer = () => {
   return (
     <footer id="footer">
       <div class="container">
-        <div
-          class="footer"
-          style={{
-            background: `url(${bg})`,
-            width: "100%",
-            height: "320px",
-            borderTopRightRadius: "30px",
-            borderBottomRightRadius: "30px",
-          }}
-        >
+        <div class="footer">
+        <img src={bg} alt="img"/>
           <div class="footer--block">
             <h1>
               Subscribe to <br />
