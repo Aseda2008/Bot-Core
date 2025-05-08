@@ -3,9 +3,10 @@
 #footer {
   .footer {
     position: relative;
+    margin-bottom: clamp(1rem, 7.99vw, 9rem) ;
+    margin-top: clamp(1rem, 7.99vw, 9rem) ;
     img {
-      width: clamp(22rem, 90vw, 90.1rem);
-      height: clamp(20rem, 25vw, 40rem);
+     width: clamp(28rem, 90vw, 90.1rem);
       object-fit: contain;
     }
     &--block {
@@ -13,8 +14,8 @@
       align-items: center;
       padding: 20px;
       position: absolute;
-      bottom: clamp(7rem, 7.99vw, 9rem);
-      top: clamp(7rem, 7.99vw, 9rem);
+      bottom: clamp(1rem, 7.99vw, 9rem);
+      top: clamp(1rem, 7.99vw, 9rem);
       h1 {
         font-family: "Roboto", sans-serif;
         font-weight: 700;
@@ -31,20 +32,20 @@
           height: clamp(1rem, 3vw, 4.3rem);
           padding: clamp(0.1rem, 0.5vw, 0.8rem);
           background: white;
-          border-radius: 10px;
+          border-radius: clamp(0.2rem, 1vw, 1.5rem);
           outline: none;
-          font-size: clamp(0.4rem, 1.5vw, 1.8rem);
+          font-size: clamp(0.2rem, 1.5vw, 1.8rem);
         }
         button {
           font-family: "Roboto", sans-serif;
           font-weight: 700;
-          font-size: clamp(0.4rem, 1.5vw, 1.8rem);
+          font-size: clamp(0.2rem, 1.5vw, 1.8rem);
           background: #274c5b;
           color: white;
           outline: none;
           height: clamp(1rem, 4vw, 4.3rem);
           width: clamp(0rem, 15vw, 30rem);
-          border-radius: 10px;
+          border-radius: clamp(0.2rem, 1vw, 1.5rem);
           padding: clamp(0.1rem, 0.5vw, 0.8rem);
         }
       }

@@ -110,15 +110,24 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 550px) {
   #header {
     .header {
+      &--nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        display: none;
+      }
       &--block {
         &__card {
-          border: none;
+        display: none;
           p{
             display: none;
           }
+        }
+        &__search{
+          display: none;
         }
 
       }

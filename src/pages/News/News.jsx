@@ -1,7 +1,7 @@
 import React from 'react';
 import photo  from "../../assets/img/Photo.svg"
-import { FaUser } from 'react-icons/fa';
-import { VscArrowCircleRight } from 'react-icons/vsc';
+// import { FaUser } from 'react-icons/fa';
+// import { VscArrowCircleRight } from 'react-icons/vsc';
 const News = () => {
     return (
     //     <section id="news">

@@ -3,25 +3,23 @@ import { OrganickContext } from ".";
 import axios from "axios";
 
 const RootContext = ({ children }) => {
-  const [orgainck, setOrganick] = useState([]);
+  const [organick, setOrganick] = useState([]);
   async function getProduc() {
     let res = await axios(
-      `https://6819929f1ac1155635053d31.mockapi.io/produc/shop`
+      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick`
     );
-    let { data } = res
+    let { data } = res.data;
     setOrganick(data);
-    console.log(data);
-    
   }
+  console.log(organick, "6");
   useEffect(() => {
     getProduc();
   }, []);
+
   return (
-    <div>
-      <OrganickContext.Provider value={{ orgainck, setOrganick }}>
-        {children}
-      </OrganickContext.Provider>
-    </div>
+    <OrganickContext.Provider value={{ organick, setOrganick }}>
+      {children}
+    </OrganickContext.Provider>
   );
 };
 

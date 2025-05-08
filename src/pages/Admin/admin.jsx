@@ -1,21 +1,28 @@
 import axios from "axios";
-import React, {  useState } from "react";
+import React, { use, useState } from "react";
 
 const Admin = () => {
   const [proUrl, setProUrl] = useState("");
   const [proname, setProName] = useState("");
   const [prodes, setProDes] = useState("");
   const [proprice, setProprice] = useState("");
+  const [ category,setCategory] = useState("")
+
   function setProduc() {
     let NewData = {
       url: proUrl,
       name: proname,
       des: prodes,
       price: proprice,
+      category: category,
     };
-    axios.post(`https://6819929f1ac1155635053d31.mockapi.io/produc/shop`),
-      NewData;
+    console.log(NewData);
+    axios.post(
+      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick`,
+      NewData
+    );
   }
+
   return (
     <section id="admin">
       <div className="container">
@@ -35,14 +42,19 @@ const Admin = () => {
             placeholder="url"
             onChange={(e) => setProUrl(e.target.value)}
           />
+           <input
+            type="text"
+            placeholder="category"
+            onChange={(e) => setCategory(e.target.value)}
+          />
           <input
             type="text"
             placeholder="description"
             onChange={(e) => setProDes(e.target.value)}
           />
+
           <center>
-            {" "}
-            <button onClick={() => setProduc()}>create</button>
+            <button onClick={setProduc}>Create</button>
           </center>
         </div>
       </div>
