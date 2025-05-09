@@ -25,7 +25,7 @@ const Header = () => {
             <Link to={"/news"}>News</Link>
             <Link to={"/admin"}>Admin</Link>
           </div>
-       <div class="header--block">
+       <div className="header--block">
        <div className="header--block__search">
             <input type="text" />
             <a><IoSearch /></a>

@@ -1,38 +1,83 @@
-#news{
-    img{
-        width: clamp(22rem, 100vw, 100.9rem);
-      height: clamp(6rem, 25vw, 40rem);
-    }
-    .contaner{
-        display: grid;
-        place-items: center;
-        margin-inline: 1.5rem;
-        padding-block: 5rem;
-         .news{
-        display: grid;
-        row-gap: 3.5rem; 
-        &--card{
-            position: relative;
-            img{
-                width: 328px;
-                border-radius: 1.5rem;
+#RecentNews {
+  .RecentNews{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 4rem);
+    margin-top:  clamp(1rem, 4.3vw, 5rem);
+    margin-bottom: clamp(1rem, 4.3vw, 5rem);
+    &--newsCard {
+        position: relative;
+        margin-bottom:  clamp(3rem, 7vw, 10rem);
+        &__newText {
+          background: white;
+          position: absolute;
+          top: 90%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: clamp(9rem, 30vw, 35rem);
+          height: clamp(4rem, 15vw, 20rem);
+          padding: clamp(0.2rem, 1.9vw, 2.9rem);
+          border-radius: clamp(0.5rem, 1vw, 1.5rem);
+          color: #274c5b;
+          font-family: "Roboto", sans-serif;
+          -webkit-box-shadow: 0px 18px 10px -5px rgba(66, 68, 90, 1);
+          -moz-box-shadow: 0px 18px 10px -5px rgba(66, 68, 90, 1);
+          box-shadow: 0px 18px 10px -5px rgba(66, 68, 90, 1);
+          button {
+            background: #efd372;
+            display: flex;
+            align-items: center;
+            color: #274c5b;
+            font-size:  clamp(0.2rem, 1vw, 1.3rem);
+            padding: clamp(0.2rem, 0.8vw, 1rem);
+            border-radius: clamp(0rem, 0.5vw, 1rem);
+            margin-top: clamp(0.5rem, 1.7vw, 1.9rem);
+            gap: clamp(0.5rem, 1.9vw, 2rem);
+          }
+          h3 {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.5rem, 1.5vw, 2rem);
+            margin-bottom: clamp(0rem, 0.5vw, 1rem);
+            margin-top: clamp(0rem, 0.5vw, 1rem);
+          }
+          p {
+            font-weight: 400;
+            font-size: clamp(0.4rem, 1.3vw, 1.5rem);
+          }
+          
+          &--MyCard {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1.5rem);
+            a {
+              font-weight: 400;
+              font-size: clamp(0.4rem, 1.5vw, 1.9rem);
+              color: #efd372;
             }
-            &__text{
-                width: 280px;
-                background: #e8dfdf98;
-                padding: 1.5rem 2rem;
-                box-shadow: 0 8px 22 hsla(0,0%,0%,.15);
-                border-radius: 1rem;
-                position: absolute;
-                left: 0;
-                right: 0;   
-                border: -2rem;
-                margin-inline: auto;
-                // opacity: 0;
-                transition: opacity 1s 1s;
+            p {
+              font-weight: 400;
+              font-size: clamp(0.4rem, 1.3vw, 1.5rem);
             }
+          }
+          &:hover  {
+            animation: SlideUp 10s  linear infinite;
+          }
+        @keyframes SlideUp {
+          0% {
+            margin-top: 40px;
+          }
+          50%{
+            margin-top: -40px; 
+          }
+          100% {
+            margin-top: 40px;
+          }
         }
-    }
-    }
-   
-}
+       
+      }
+      }
+  }
+  }

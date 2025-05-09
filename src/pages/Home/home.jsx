@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useContext, useState } from "react";
 import { OrganickContext } from "../../context";
 import text from "../../assets/img/text.svg";
@@ -11,11 +10,16 @@ import img6 from "../../assets/img/icon (1).svg";
 import img7 from "../../assets/img/Offer.svg";
 import img8 from "../../assets/img/image.svg";
 import img9 from "../../assets/img/img1.svg";
+import img10 from "../../assets/img/organick.svg";
+import img11 from "../../assets/img/organick2.svg";
+import img12 from "../../assets/img/organick3.svg";
+import img13 from "../../assets/img/textcard.svg";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Product from "../Product/Product";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
 import { GrClose } from "react-icons/gr";
+import { newData } from "../../Data";
 
 const Home = () => {
   const { organick } = useContext(OrganickContext);
@@ -148,25 +152,144 @@ const Home = () => {
           </div>
         </div>
         <div class="store">
-          <img src={img8} alt="img" style={{
-                height: "clamp(20rem, 58vw, 58.1rem)",
-                width: "clamp(20rem, 58vw, 58.1rem)",
-          }}/>
+          <img
+            src={img8}
+            alt="img"
+            style={{ width: "clamp(20rem, 58vw, 58.1rem)" }}
+          />
           <div class="store--block">
-<img src={img9} alt="img"
-                style={{
-                  width: "clamp(3rem, 7vw, 7.1rem)",
-                }}/>
-            <h2>Econis is a Friendly <br/>
-            Organic Store</h2>
+            <img
+              src={img9}
+              alt="img"
+              style={{ width: "clamp(3rem, 7vw, 7.1rem)" }}
+            />
+            <h2>
+              Econis is a Friendly <br />
+              Organic Store
+            </h2>
             <h3>Start with Our Company First</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium <br/>doloremque laudantium. Sed ut perspiciatis.</p>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium <br />
+              doloremque laudantium. Sed ut perspiciatis.
+            </p>
             <h3>Learn How to Grow Yourself</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium <br/>doloremque laudantium. Sed ut perspiciatis.</p>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium <br />
+              doloremque laudantium. Sed ut perspiciatis.
+            </p>
             <h3>Farming Strategies of Today</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium <br/>doloremque laudantium. Sed ut perspiciatis.</p>
-</div>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium <br />
+              doloremque laudantium. Sed ut perspiciatis.
+            </p>
           </div>
+        </div>
+        <div class="OrganicProducts">
+          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+            <img
+              src={img10}
+              alt="img"
+              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                backgroundColor: "#FFFFFF",
+                color: " #274C5B",
+                border: "none",
+                borderRadius: "clamp(0rem, 0.5vw, 1rem)",
+                cursor: "pointer",
+                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+              }}
+            >
+              Organic Juice
+            </button>
+          </div>
+          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+            <img
+              src={img11}
+              alt="img"
+              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                backgroundColor: "#FFFFFF",
+                color: " #274C5B",
+                border: "none",
+                borderRadius: "clamp(0rem, 0.5vw, 1rem)",
+                cursor: "pointer",
+                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+              }}
+            >
+              Organic Food
+            </button>
+          </div>
+          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+            <img
+              src={img12}
+              alt="img"
+              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                backgroundColor: "#FFFFFF",
+                color: " #274C5B",
+                border: "none",
+                borderRadius: "clamp(0rem, 0.5vw, 1rem)",
+                cursor: "pointer",
+                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+              }}
+            >
+              Nuts Cookis
+            </button>
+          </div>
+        </div>
+        <div class="container">
+       <div class="RecentNews--top">
+       <div class="RecentNews--top__text">
+       <img src={img13} alt="img" style={{width: " clamp(3rem, 7vw, 7.1rem)",}}/>
+        <h1>Discover weekly content about <br/>
+        organic food, & more</h1>
+       </div>
+<Link to={"/news"}><button>More News  <FaCircleArrowRight /></button></Link>
+       </div>
+        <div class="RecentNews">
+            {newData.slice(0,2).map((el) => (
+          <div class="RecentNews--newsCard">
+          <img src={el.image} alt="img" style={{ width: "clamp(10rem, 37vw, 40rem)",height: "clamp(9rem, 30vw, 35rem)", }}/>
+         <div class="RecentNews--newsCard__newText">
+          <div class="RecentNews--newsCard__newText--MyCard">
+          <a><FaUser /></a>
+            <p>By Rachi Card</p>
+            
+          </div>
+          <h3>{el.title}</h3>
+            <p>Simply dummy text of the printing and typesetting <br/>industry. Lorem Ipsum</p>
+            <button>Read More <FaCircleArrowRight /></button>
+         </div>
+          </div>
+            ))
+            }
+        </div>
+        </div>
+          
       </section>
     </>
   );

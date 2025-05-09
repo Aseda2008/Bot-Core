@@ -11,6 +11,7 @@ import AOS from "aos";
 import 'aos/dist/aos.css'; // <-- Бул сөзсүз керек
 import { useEffect } from "react";
 import Shop from "./pages/Shop/Shop";
+import NewsDatail from "./pages/NewsDatail/NewsDatail";
 
 function App() {
     useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
         { id: 3, link: "/admin", el: <Admin /> },
         { id: 4, link: "/news", el: <News /> },
         { id: 5, link: "/ShopNow", el: <Shop/> },
+        { id: 6, link: "/newsDetail:id", el: <NewsDatail/> },
     ];
 
     return (

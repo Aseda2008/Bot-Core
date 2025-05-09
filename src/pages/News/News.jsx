@@ -1,43 +1,51 @@
-import React from 'react';
-import photo  from "../../assets/img/Photo.svg"
-// import { FaUser } from 'react-icons/fa';
-// import { VscArrowCircleRight } from 'react-icons/vsc';
-const News = () => {
-    return (
-    //     <section id="news">
-    //     <img src={"https://as2.ftcdn.net/v2/jpg/03/16/58/03/1000_F_316580392_ShA4c9CRiGqQsXIlQhCgtyw9duYIyoHH.jpg"} alt="img"/>
-    //         <div class="container">
-    //             <div class="news">
-    //         <article className='news--card'>
-    //         <img src={photo} alt="img"/>
-    //             {/* <div class="news--card__circle">
-    //                 <p>26 <span>Nov</span></p>
-    //             </div> */}
-    //             <div class="news--card__text">
-    //   <a><FaUser /></a>
-    //   <h4>By Rachi Card</h4>
-    //   <h3>The Benefits of Vitamin D & How to Get It</h3>
-    //   <p>Simply dummy text of the printing and typesetting <br/>industry. Lorem Ipsum</p>
-    //   <button>Read More <VscArrowCircleRight/></button>
-    //             </div>
-    //         </article>
-    //             </div>
-    //         </div>
-    //     </section>
-    <div className="container">
-        <div className="container--card">
-            <article className='container--card__article'>
-            <img src={photo} alt="img" className='container--card__article--img'/>
-            <div class="container--card__article__data">
-                <span className='container--card__article__data--des'>Simply dummy text of the printing and typesetting <br/>industry. Lorem Ipsum</span>
-                <h2 className='container--card__article__data--title'>The Benefits of Vitamin D & How to Get It</h2>
-                <button className='container--card__article--btn'>Read More </button>
-            </div>
-            </article>
-        </div>
-    </div>
+import React from "react";
+import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { newData } from "../../Data";
 
-    );
+const News = () => {
+  const nav = useNavigate();
+
+  const handleReadMore = (id) => {
+    nav(`/newsDetail${id}`); // URL түзүү жана navigate аркылуу өтүү
+  };
+
+  return (
+    <div id="RecentNews">
+      <div className="container">
+        <div className="RecentNews">
+          {newData.map((el) => (
+            <div className="RecentNews--newsCard" key={el.id}>
+              <img
+                src={el.image}
+                alt="img"
+                style={{
+                  width: "clamp(10rem, 37vw, 40rem)",
+                  height: "clamp(9rem, 30vw, 35rem)",
+                }}
+              />
+              <div className="RecentNews--newsCard__newText">
+                <div className="RecentNews--newsCard__newText--MyCard">
+                  <a>
+                    <FaUser />
+                  </a>
+                  <p>By Rachi Card</p>
+                </div>
+                <h3>{el.title}</h3>
+                <p>
+                  Simply dummy text of the printing and typesetting <br />
+                  industry. Lorem Ipsum
+                </p>
+                <button onClick={() => handleReadMore(el.id)}>
+                  Read More <FaCircleArrowRight />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default News;
