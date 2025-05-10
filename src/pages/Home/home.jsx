@@ -14,89 +14,122 @@ import img10 from "../../assets/img/organick.svg";
 import img11 from "../../assets/img/organick2.svg";
 import img12 from "../../assets/img/organick3.svg";
 import img13 from "../../assets/img/textcard.svg";
+import img14 from "../../assets/img/home.jpg";
+import img15 from "../../assets/img/img2.svg";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Product from "../Product/Product";
 import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
 import { GrClose } from "react-icons/gr";
 import { newData } from "../../Data";
-
 const Home = () => {
   const { organick } = useContext(OrganickContext);
   const [count, setCount] = useState(3);
+  const nav = useNavigate();
+
+  const handleReadMore = (id) => {
+    nav(`/newsDetail/${id}`);
+  };
   return (
     <>
       <section id="home">
-        <div className="blocks">
-          <div className="blocks--block2">
-            <img src={img1} alt="img" data-aos="fade-right" />
-            <img src={img2} data-aos="fade-left" />
+        <div
+          className="homeBg"
+          style={{
+            background: `url(${img14}) no-repeat center/cover`,
+            width: "100%",
+            height: "80vh",
+          }}
+        >
+          <div class="continer">
+            <div class="homeBg--text">
+              <img src={img15} alt="img" />
+              <h1>
+                Choose the best <br />
+                healthier way <br />
+                of life
+              </h1>
+              <button>
+                Explore Now <FaCircleArrowRight />
+              </button>
+            </div>
           </div>
         </div>
+        <div className="blocks">
+          <div class="continer">
+            <div className="blocks--block2">
+              <img src={img1} alt="img" data-aos="fade-right" />
+              <img src={img2} data-aos="fade-left" />
+            </div>
+          </div>
+        </div>
+
         <div class="working">
-          <div class="working--block">
-            <img
-              src={img3}
-              alt="img"
-              style={{
-                width: "clamp(10rem,50vw, 51rem)",
-              }}
-            />
-            <div class="working--block__text">
+          <div class="continer">
+            <div class="working--block">
               <img
-                src={img4}
+                src={img3}
                 alt="img"
                 style={{
-                  width: "clamp(3rem, 7vw, 7.1rem)",
+                  width: "clamp(10rem,50vw, 51rem)",
                 }}
               />
-              <h2>
-                We Believe in Working <br />
-                Accredited Farmers
-              </h2>
-              <p>
-                Simply dummy text of the printing and typesetting industry.
-                <br /> Lorem had ceased to been the industry's standard dummy
-                text <br />
-                ever since the 1500s, when an unknown printer took a galley.
-              </p>
-              <div class="working--block__text--card">
+              <div class="working--block__text">
                 <img
-                  src={img5}
+                  src={img4}
                   alt="img"
                   style={{
                     width: "clamp(3rem, 7vw, 7.1rem)",
                   }}
                 />
-                <div class="working--block__text--card__foods">
-                  <h3>Organic Foods Only</h3>
-                  <p>
-                    Simply dummy text of the printing and typesetting <br />
-                    industry. Lorem Ipsum
-                  </p>
+                <h2>
+                  We Believe in Working <br />
+                  Accredited Farmers
+                </h2>
+                <p>
+                  Simply dummy text of the printing and typesetting industry.
+                  <br /> Lorem had ceased to been the industry's standard dummy
+                  text <br />
+                  ever since the 1500s, when an unknown printer took a galley.
+                </p>
+                <div class="working--block__text--card">
+                  <img
+                    src={img5}
+                    alt="img"
+                    style={{
+                      width: "clamp(2rem, 7vw, 7.1rem)",
+                    }}
+                  />
+                  <div class="working--block__text--card__foods">
+                    <h3>Organic Foods Only</h3>
+                    <p>
+                      Simply dummy text of the printing and typesetting <br />
+                      industry. Lorem Ipsum
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="working--block__text--card">
-                <img
-                  src={img6}
-                  alt="img"
-                  style={{
-                    width: "clamp(3rem, 7vw, 7.1rem)",
-                  }}
-                />
-                <div class="working--block__text--card__foods">
-                  <h3>Organic Foods Only</h3>
-                  <p>
-                    Simply dummy text of the printing and typesetting <br />
-                    industry. Lorem Ipsum
-                  </p>
+                <div class="working--block__text--card">
+                  <img
+                    src={img6}
+                    alt="img"
+                    style={{
+                      width: "clamp(2rem, 7vw, 7.1rem)",
+                    }}
+                  />
+                  <div class="working--block__text--card__foods">
+                    <h3>Organic Foods Only</h3>
+                    <p>
+                      Simply dummy text of the printing and typesetting <br />
+                      industry. Lorem Ipsum
+                    </p>
+                  </div>
                 </div>
+                <Link to={"/ShopNow"}>
+                  <button>
+                    Shop Now <MdOutlineArrowRightAlt />
+                  </button>
+                </Link>
               </div>
-              <Link to={"/ShopNow"}>
-                <button>
-                  Shop Now <MdOutlineArrowRightAlt />
-                </button>
-              </Link>
             </div>
           </div>
         </div>
@@ -155,13 +188,13 @@ const Home = () => {
           <img
             src={img8}
             alt="img"
-            style={{ width: "clamp(20rem, 58vw, 58.1rem)" }}
+            style={{ width: "clamp(10rem, 58vw, 58.1rem)" }}
           />
           <div class="store--block">
             <img
               src={img9}
               alt="img"
-              style={{ width: "clamp(3rem, 7vw, 7.1rem)" }}
+              style={{ width: "clamp(1rem, 7vw, 7.1rem)" }}
             />
             <h2>
               Econis is a Friendly <br />
@@ -188,11 +221,19 @@ const Home = () => {
           </div>
         </div>
         <div class="OrganicProducts">
-          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+          <div
+            class="OrganickProduct--card"
+            style={{
+              position: "relative",
+              width: "clamp(3rem, 30vw, 35rem)",
+              height: "clamp(3rem, 28vw, 35rem)",
+              background: "#e8a107",
+            }}
+          >
             <img
               src={img10}
               alt="img"
-              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+              style={{ width: "clamp(3rem, 30vw, 35rem)" }}
             />
             <button
               style={{
@@ -200,23 +241,31 @@ const Home = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                padding: "clamp(0rem, 1vw, 1.5rem)",
                 backgroundColor: "#FFFFFF",
                 color: " #274C5B",
                 border: "none",
                 borderRadius: "clamp(0rem, 0.5vw, 1rem)",
                 cursor: "pointer",
-                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+                fontSize: "clamp(0rem, 1.3vw, 1.5rem)",
               }}
             >
               Organic Juice
             </button>
           </div>
-          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+          <div
+            class="OrganickProduct--card"
+            style={{
+              position: "relative",
+              width: "clamp(3rem, 30vw, 35rem)",
+              height: "clamp(3rem, 28vw, 35rem)",
+              background: "#e8a107",
+            }}
+          >
             <img
               src={img11}
               alt="img"
-              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+              style={{ width: "clamp(3rem, 30vw, 35rem)" }}
             />
             <button
               style={{
@@ -224,23 +273,31 @@ const Home = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                padding: "clamp(0rem, 1vw, 1.5rem)",
                 backgroundColor: "#FFFFFF",
                 color: " #274C5B",
                 border: "none",
                 borderRadius: "clamp(0rem, 0.5vw, 1rem)",
                 cursor: "pointer",
-                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+                fontSize: "clamp(0rem, 1.3vw, 1.5rem)",
               }}
             >
               Organic Food
             </button>
           </div>
-          <div class="OrganickProduct--card" style={{ position: "relative" }}>
+          <div
+            class="OrganickProduct--card"
+            style={{
+              position: "relative",
+              width: "clamp(3rem, 30vw, 35rem)",
+              height: "clamp(3rem, 28vw, 35rem)",
+              background: "#e8a107",
+            }}
+          >
             <img
               src={img12}
               alt="img"
-              style={{ width: "clamp(9rem, 30vw, 35rem)" }}
+              style={{ width: "clamp(3rem, 30vw, 35rem)" }}
             />
             <button
               style={{
@@ -248,13 +305,13 @@ const Home = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                padding: "clamp(0.5rem, 1vw, 1.5rem)",
+                padding: "clamp(0rem, 1vw, 1.5rem)",
                 backgroundColor: "#FFFFFF",
                 color: " #274C5B",
                 border: "none",
                 borderRadius: "clamp(0rem, 0.5vw, 1rem)",
                 cursor: "pointer",
-                fontSize: "clamp(0.5rem, 1.3vw, 1.5rem)",
+                fontSize: "clamp(0rem, 1.3vw, 1.5rem)",
               }}
             >
               Nuts Cookis
@@ -262,34 +319,55 @@ const Home = () => {
           </div>
         </div>
         <div class="container">
-       <div class="RecentNews--top">
-       <div class="RecentNews--top__text">
-       <img src={img13} alt="img" style={{width: " clamp(3rem, 7vw, 7.1rem)",}}/>
-        <h1>Discover weekly content about <br/>
-        organic food, & more</h1>
-       </div>
-<Link to={"/news"}><button>More News  <FaCircleArrowRight /></button></Link>
-       </div>
-        <div class="RecentNews">
-            {newData.slice(0,2).map((el) => (
-          <div class="RecentNews--newsCard">
-          <img src={el.image} alt="img" style={{ width: "clamp(10rem, 37vw, 40rem)",height: "clamp(9rem, 30vw, 35rem)", }}/>
-         <div class="RecentNews--newsCard__newText">
-          <div class="RecentNews--newsCard__newText--MyCard">
-          <a><FaUser /></a>
-            <p>By Rachi Card</p>
-            
+          <div class="RecentNews--top">
+            <div class="RecentNews--top__text">
+              <img
+                src={img13}
+                alt="img"
+                style={{ width: " clamp(3rem, 7vw, 7.1rem)" }}
+              />
+              <h1>
+                Discover weekly content about <br />
+                organic food, & more
+              </h1>
+            </div>
+            <Link to={"/news"}>
+              <button>
+                More News <FaCircleArrowRight />
+              </button>
+            </Link>
           </div>
-          <h3>{el.title}</h3>
-            <p>Simply dummy text of the printing and typesetting <br/>industry. Lorem Ipsum</p>
-            <button>Read More <FaCircleArrowRight /></button>
-         </div>
+          <div class="RecentNews">
+            {newData.slice(0, 2).map((el) => (
+              <div class="RecentNews--newsCard">
+                <img
+                  src={el.image}
+                  alt="img"
+                  style={{
+                    width: "clamp(10rem, 37vw, 40rem)",
+                    height: "clamp(9rem, 30vw, 35rem)",
+                  }}
+                />
+                <div class="RecentNews--newsCard__newText">
+                  <div class="RecentNews--newsCard__newText--MyCard">
+                    <a>
+                      <FaUser />
+                    </a>
+                    <p>By Rachi Card</p>
+                  </div>
+                  <h3>{el.title}</h3>
+                  <p>
+                    Simply dummy text of the printing and typesetting <br />
+                    industry. Lorem Ipsum
+                  </p>
+                  <button onClick={() => handleReadMore(el.id)}>
+                    Read More <FaCircleArrowRight />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-            ))
-            }
         </div>
-        </div>
-          
       </section>
     </>
   );

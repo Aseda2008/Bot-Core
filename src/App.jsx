@@ -27,7 +27,7 @@ function App() {
         { id: 3, link: "/admin", el: <Admin /> },
         { id: 4, link: "/news", el: <News /> },
         { id: 5, link: "/ShopNow", el: <Shop/> },
-        { id: 6, link: "/newsDetail:id", el: <NewsDatail/> },
+        { id: 6, link: "/newsDetail/:id", el: <NewsDatail/> },
     ];
 
     return (

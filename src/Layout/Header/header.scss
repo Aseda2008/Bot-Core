@@ -1,98 +1,98 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 #header {
   background: #ffffffe5;
-  padding: 10px;
+  padding-block: 40px;
   .header {
     display: flex;
     align-items: center;
-    gap: clamp(0.5rem, 2vw, 3rem);
+    justify-content: space-between;
+    position: relative;
     img {
-      width: clamp(5rem, 15vw, 18rem);
+      max-width: 200px;
     }
     &--nav {
       display: flex;
-      gap: clamp(0.5rem, 1.8vw, 2rem);
+      padding: 50px;
+      gap: 30px;
+      @media (max-width: 900px) {
+        display: none;
+      }
       a {
         font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: clamp(0.7rem, 1.5vw, 3rem);
+        font-weight: 500;
+        font-size: clamp(0.7rem, 1.4vw, 3rem);
         color: #274c5b;
       }
       select {
         font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: clamp(0.7rem, 1.5vw, 3rem);
+        font-weight: 500;
+        font-size: clamp(0.7rem, 1.4vw, 3rem);
         color: #274c5b;
         border: none;
       }
     }
     &--block {
       display: flex;
-      gap: 10px;
       align-items: center;
-      &__search {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: relative;
-        input {
-          width: clamp(5rem, 14vw, 18rem);
-          height: clamp(2rem, 3.5vw, 4rem);
-          font-size: clamp(0.7rem, 1.5vw, 3rem);
-          outline: none;
-          border-radius: 25px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: clamp(0.3rem, 0.4vw, 1.5rem);
-        }
-        a {
-          position: absolute;
-          top: clamp(0.3rem, 0.7vw, 1.5rem);
-          right:clamp(0.3rem, 0.4vw, 1.5rem);
-          width: clamp(2rem, 3vw, 4rem);
-          height: clamp(2rem, 3vw, 4rem);
-          border-radius: 50%;
-          background: #7eb693;
-          color: white;
-          font-size: clamp(0.8rem, 1.5vw, 1.8rem);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-      &__menu{
+      gap: 30px;
+      &__menu {
         display: none;
-        align-items: center;
-       
-        a {
-          width: clamp(2rem, 3vw, 4rem);
-          height: clamp(2rem, 3vw, 4rem);
+        @media (max-width: 900px) {
+          display: flex;
+        }
+        button {
+          width: 45px;
+          height: 45px;
           border-radius: 50%;
           background: #7eb693;
           color: white;
+          font-size: 25px;
           font-size: clamp(0.8rem, 1.5vw, 1.8rem);
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+        &--menuBlock {
+          display: flex;
+          position: absolute;
+          align-items: center;
+          width: 150px;
+          height: 250px;
+          gap: 7px;
+          -webkit-box-shadow: 0px 0px 8px -3px rgba(66, 68, 90, 1);
+          -moz-box-shadow: 0px 0px 8px -3px rgba(66, 68, 90, 1);
+          box-shadow: 0px 0px 8px -3px rgba(66, 68, 90, 1);
+          background: white;
+          flex-direction: column;
+          top: 50px;
+          right: 0;
+          z-index: 1;
+          border-radius: 5px;
+          a {
+            color: black;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: clamp(1.3rem, 2.3vw, 3rem);
+            padding-top: 5px;
+          }
         }
       }
       &__card {
         display: flex;
         align-items: center;
-        width: clamp(4rem, 10vw, 11rem);
-        height: clamp(1.8rem, 2vw, 4rem);
+        width: 180px;
+        height: 45px;
         border: 1px solid #e0e0e0;
-        padding: clamp(0.3rem, 0.7vw, 1.5rem);
-        border-radius: 25px;
+        padding: 5px;
+        border-radius: 35px;
         position: relative;
         a {
-          width: clamp(2rem, 3vw, 4rem);
-          height: clamp(2rem, 3vw, 4rem);
+          width: 45px;
+          height: 45px;
           border-radius: 50%;
           background: #7eb693;
           color: white;
-          font-size: clamp(1rem, 1.9vw, 2rem);
+          font-size: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -100,55 +100,10 @@
         }
         p {
           font-weight: 500;
-          font-size: clamp(0.1rem, 1.2vw, 2rem);
+          font-size: 15px;
           position: absolute;
-          left: clamp(2.5rem, 4.8vw, 5rem);
+          left: 90px;
           font-family: "Roboto", sans-serif;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 550px) {
-  #header {
-    .header {
-      &--nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        display: none;
-      }
-      &--block {
-        &__card {
-        display: none;
-          p{
-            display: none;
-          }
-        }
-        &__search{
-          display: none;
-        }
-
-      }
-    }
-  }
-}
-@media (max-width: 500px) {
-  #header {
-    .header {
-      &--block {
-        &__card {
-          display: none;
-          p{
-            display: none;
-          }
-        }
-        &__search {
-          display: none;
-        }
-        &__menu {
-          display: block;
         }
       }
     }

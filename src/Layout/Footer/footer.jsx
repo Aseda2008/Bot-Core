@@ -42,10 +42,11 @@ const Footer = () => {
                 Lorem Ipsum simply dummy text of the printing{" "}
               </p>
               <div className="card--center__circle">
-                <a><FaInstagram /></a>
+               <a href="https://www.organickpastures.com/"><FaInstagram /></a>
                 <a><FaFacebook /></a>
                 <a><FaTwitter /></a>
                 <a><FaPinterestP /></a>
+               
               </div>
             </div>
             <div className="card--line"></div>

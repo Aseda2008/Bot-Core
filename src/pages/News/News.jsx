@@ -7,7 +7,7 @@ const News = () => {
   const nav = useNavigate();
 
   const handleReadMore = (id) => {
-    nav(`/newsDetail${id}`); // URL түзүү жана navigate аркылуу өтүү
+    nav(`/newsDetail/${id}`); 
   };
 
   return (
