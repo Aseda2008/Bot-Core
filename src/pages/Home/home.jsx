@@ -16,15 +16,18 @@ import img12 from "../../assets/img/organick3.svg";
 import img13 from "../../assets/img/textcard.svg";
 import img14 from "../../assets/img/home.jpg";
 import img15 from "../../assets/img/img2.svg";
+import img16 from "../../assets/img/Background.svg";
+import img17 from "../../assets/img/img17.svg";
+import img18 from "../../assets/img/img18.svg";
+import img19 from "../../assets/img/star.webp";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import Product from "../Product/Product";
 import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
-import { GrClose } from "react-icons/gr";
 import { newData } from "../../Data";
 const Home = () => {
   const { organick } = useContext(OrganickContext);
-  const [count, setCount] = useState(3);
+  const [count, setCount] = useState(4);
   const nav = useNavigate();
 
   const handleReadMore = (id) => {
@@ -33,8 +36,7 @@ const Home = () => {
   return (
     <>
       <section id="home">
-        <div
-          className="homeBg"
+        <div className="homeBg"
           style={{
             background: `url(${img14}) no-repeat center/cover`,
             width: "100%",
@@ -63,9 +65,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <div class="working">
-          <div class="continer">
+          <div class="container">
             <div class="working--block">
               <img
                 src={img3}
@@ -145,7 +146,7 @@ const Home = () => {
           </div>
           <center>
             {count < organick.length ? (
-              <button onClick={() => setCount(count + 3)}>
+              <button onClick={() => setCount(count + 4)}>
                 Load More
                 <MdOutlineArrowRightAlt />
               </button>
@@ -153,6 +154,79 @@ const Home = () => {
               <button>Finished</button>
             )}
           </center>
+        </div>
+        <div class="testimonial"
+          style={{
+            background: `url(${img16}) no-repeat center/cover`,
+            height: "120vh",
+            marginTop: "30px",
+          }}
+        >
+          <div class="container">
+            <div class="testimonial">
+              <img src={img17} alt="img" width={"100px"} />
+              <h1>What Our Customer Saying?</h1>
+              <img
+                src={img18}
+                alt="img"
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  borderRadius: "50%",
+                }}
+              />
+              <div class="testimonial--stars">
+                <div class="testimonial--stars__star">
+                  <img
+                    src={img19}
+                    alt="img"
+                    style={{
+                      width: "150px",
+                      height: "100px",
+                    }}
+                  />
+                </div>
+              </div>
+              <p>
+                Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum simply dummy <br />
+                text of the printing and typesetting industry. Lorem Ipsum has
+                been.
+              </p>
+              <hr/>
+              <h3>
+                Sara Taylor
+                <br />
+                <span>Consumer</span>
+              </h3>
+              <div class="testimonial--circles">
+                <div class="testimonial--circles__circle">
+                  <div class="testimonial--circles__circle--from">
+                    <h1>100%</h1>
+                    <span>Organic</span>
+                  </div>
+                </div>
+                <div class="testimonial--circles__circle">
+                  <div class="testimonial--circles__circle--from">
+                    <h1>285</h1>
+                    <span>Active Product</span>
+                  </div>
+                </div>
+                <div class="testimonial--circles__circle">
+                  <div class="testimonial--circles__circle--from">
+                    <h1>350+</h1>
+                    <span>Organic Orchads</span>
+                  </div>
+                </div>
+                    <div class="testimonial--circles__circle">
+                  <div class="testimonial--circles__circle--from">
+                    <h1>25+</h1>
+                    <span>Years of Farming</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="organick">
           <div className="organick--top">
@@ -168,19 +242,8 @@ const Home = () => {
             </div>
             <div class="organick--top__block">
               {organick?.slice(0, count).map((el) => (
-                <Product el={el} />
+                el.rating >= 4 ? <Product el={el} /> : null
               ))}
-              <center>
-                {count < organick.length ? (
-                  <button onClick={() => setCount(count + 3)}>
-                    <MdOutlineArrowRightAlt />
-                  </button>
-                ) : (
-                  <button>
-                    <GrClose />
-                  </button>
-                )}
-              </center>
             </div>
           </div>
         </div>

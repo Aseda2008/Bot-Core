@@ -25,7 +25,7 @@ const Header = () => {
               <option value="News">News</option>
               <option value="Admin">Admin</option>
             </select>
-            <Link to={"/"}>Shop</Link>
+            <Link to={"/shop"}>Shop</Link>
             <Link to={"/"}>Projects</Link>
             <Link to={"/news"}>News</Link>
             <Link to={"/admin"}>Admin</Link>

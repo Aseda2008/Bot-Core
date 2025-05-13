@@ -15,8 +15,8 @@ const Admin = () => {
       des: prodes,
       price: proprice,
       category: category,
+      rating:Math.round(Math.random() * 5)
     };
-    console.log(NewData);
     axios.post(
       `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick`,
       NewData

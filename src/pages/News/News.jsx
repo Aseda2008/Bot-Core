@@ -2,16 +2,25 @@ import React from "react";
 import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { newData } from "../../Data";
-
+import Banner from "../../assets/img/BannerNews.svg";
 const News = () => {
   const nav = useNavigate();
 
   const handleReadMore = (id) => {
-    nav(`/newsDetail/${id}`); 
+    nav(`/newsDetail/${id}`);
   };
 
   return (
-    <div id="RecentNews">
+    <div
+      id="RecentNews">
+    <div class="RecentNewsBanner"       
+    style={{
+        background: `url(${Banner}) no-repeat center`,
+        backgroundPosition: "center",
+        height: "70vh",
+      }}>
+
+    </div>
       <div className="container">
         <div className="RecentNews">
           {newData.map((el) => (

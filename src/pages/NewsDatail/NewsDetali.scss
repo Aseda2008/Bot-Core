@@ -1,10 +1,10 @@
 #details {
   .details {
     position: relative;
-   
     &--text {
-        position: absolute;
-        top: 269px;
+      position: absolute;
+      top: 269px;
+      margin-left: 35px;
       background: white;
       width: 90%;
       margin-top: 60px;
@@ -20,7 +20,6 @@
         font-size: clamp(0.5rem, 2vw, 2.5rem);
         font-weight: 700;
         margin: 10px 0;
-
       }
       p {
         font-weight: 500;
@@ -37,8 +36,43 @@
         gap: 20px;
       }
     }
-    &--textDtl{
-        margin-top: 100px;
+    &--textDtl {
+      margin-top: 100px;
+      margin-left: 10%;
+      h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: clamp(0.6rem, 2vw, 2.5rem);
+        font-weight: 700;
+        margin: 3% 0;
+      }
+      p {
+        font-weight: 500;
+        color: #525c60;
+        font-size: clamp(0.5rem, 1.5vw, 2rem);
+      }
+      ul {
+        li {
+          font-weight: 500;
+          color: #525c60;
+          font-size: clamp(0.5rem, 1.5vw, 2rem);
+          margin: 3% 0;
+        }
+      }
+    }
+    &--textCard {
+      width: 100%;
+      background: #f1edea;
+      height: 237px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+        font-size: clamp(0.6rem, 2vw, 2.5rem);
+        text-align: center;
+      }
     }
   }
 }

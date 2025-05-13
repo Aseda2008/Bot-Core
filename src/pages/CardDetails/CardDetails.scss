@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap");
+#Details {
+  .Details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--left {
+      width: 400px;
+      height: 400px;
+      background: rgb(226, 226, 237);
+      border-radius: 20px;
+      img {
+        width: 400px;
+        height: 400px;
+        object-fit: contain;
+      }
+      button {
+        position: absolute;
+        background: #274c5b;
+        color: #ffffff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+    }
+    &--right {
+      color: #274c5b;
+      width: 670px;
+
+      h1 {
+        font-weight: 600;
+        font-size: 29px;
+        font-family: "Roboto", sans-serif;
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        color: #525c60;
+        margin-bottom: clamp(0.5rem, 1vw, 1.9rem);
+        margin-top: clamp(0.5rem, 1vw, 1.9rem);
+      }
+      &__Quantity {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        h2 {
+          font-family: "Roboto", sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+        }
+        h3 {
+          width: 90px;
+          height: 50px;
+          border: #274c5b 2px solid;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content:space-around;
+          font-size: 20px;
+          p{
+            font-family: "Roboto", sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+          }
+        }
+        button {
+          background: #274c5b;
+          color: #ffffff;
+          font-size:15px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          width: 150px;
+          padding: 5px;
+          height: 50px;
+          border-radius: 10px;
+        }
+      }
+      &__star {
+        display: flex;
+        align-items: center;
+        img {
+          width: 50px;
+        }
+        h2 {
+          font-family: "Roboto", sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+        }
+      }
+    }
+    &--bottom{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    margin: 30px 0;
+    p{
+        text-align: center;
+    }
+        &__Product{
+            display: flex;
+            gap: 20px;
+            margin: 20px 0; 
+
+        }
+    }
+  }
+}
