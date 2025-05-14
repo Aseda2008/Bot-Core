@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../assets/img/Logo.svg";
 import { Link } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { LuSquareMenu } from "react-icons/lu";
+import { OrganickContext } from "../../context";
 const Header = () => {
   const [menuOpen,setMenuOpen] = useState(false)
+  const {basket} = useContext(OrganickContext)
   function togglMenu(){
     setMenuOpen(!menuOpen)
   }
@@ -31,10 +33,12 @@ const Header = () => {
             <Link to={"/admin"}>Admin</Link>
           </div>
        <div className="header--block">
-          <div className="header--block__card">
+          <Link to={"/basket"}>
+            <div className="header--block__card">
               <a><MdShoppingCart /></a>
-              <p>Cart (0)</p>
+              <p>Cart ({basket.length})</p>
             </div>
+          </Link>
             <div className="header--block__menu">
             <button onClick={() => {togglMenu()}}><LuSquareMenu /></button>
                  {menuOpen && (

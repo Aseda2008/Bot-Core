@@ -29,7 +29,6 @@ const Home = () => {
   const { organick } = useContext(OrganickContext);
   const [count, setCount] = useState(4);
   const nav = useNavigate();
-
   const handleReadMore = (id) => {
     nav(`/newsDetail/${id}`);
   };

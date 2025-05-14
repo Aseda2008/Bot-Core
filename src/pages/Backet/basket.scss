@@ -1,0 +1,175 @@
+#Basket {
+  .Basket {
+    display: flex;
+    justify-content: space-between;
+    &--basket {
+      max-height: 500px;
+      overflow-y: auto;
+      padding-right: 10px;
+      width: 51%;
+      &__card {
+        width: 545px;
+        height: 140px;
+        border: #f9f8f8ef 1px solid;
+        padding: 10px;
+        background: white;
+        color: #274c5b;
+        border: 1px #274c5b solid;
+        border-radius: 15px;
+        display: flex;
+        gap: 60px;
+        align-items: start;
+        margin: 10px 0;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+        &--left {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 90%;
+            object-fit: contain;
+          }
+          button {
+            position: absolute;
+            background: #274c5b;
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 13px;
+          }
+        }
+
+        &--right {
+          width: 100%;
+          height: 100%;
+          a {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+          }
+          h1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 70px;
+            height: 10px;
+            border: 1px #274c5b solid;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+
+            p {
+              font-size: 15px;
+            }
+          }
+
+          h3 {
+            font-family: "Roboto", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+          }
+
+          p {
+            font-weight: 500;
+            font-size: 14px;
+            color: #525c60;
+          }
+
+          &__price {
+            display: flex;
+            flex-direction: column;
+
+            &--rating {
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &--block {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    &__btn{
+        display: flex;
+        gap: 35px;
+button {
+  width: 180px;
+  margin-top: 30px;
+  height: 50px;
+  background: linear-gradient(135deg, #274c5b, #3b6b85); // Градиент
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+  &:hover {
+    background: linear-gradient(135deg, #1f3d4a, #345e70); // Градиент өзгөрөт
+    transform: scale(1.07) translateY(-2px); // Чоңоёт жана көтөрүлөт
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); // Терең көлөкө
+  }
+
+  &:active {
+    transform: scale(1) translateY(0); // Нормалга кайтуу басканда
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 2px solid #88c0d0; // Жеңил көк контур
+    outline-offset: 3px;
+  }
+}
+
+
+    }
+      &__bar {
+        width: 400px;
+        height: 20px;
+        background: rgba(128, 128, 128, 0.45);
+        border-radius: 10px;
+        &--full {
+          width: 20%;
+          height: 100%;
+          border-radius: 10px;
+        }
+      }
+      &__totalPriceBlock {
+        margin-top: 30px;
+        width: 400px;
+        height: 100px;
+        border-radius: 10px;
+        border: #274c5b 2px solid;
+        h1 {
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          color: #274c5b;
+        }
+        &--totalPrice {
+          display: flex;
+          margin-top: 30px;
+          gap: 20px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

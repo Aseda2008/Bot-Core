@@ -1,20 +1,31 @@
 import React, { useContext } from "react";
 import star from "../../assets/img/img20.png";
-import { LiaOpencart } from "react-icons/lia";
 import { Link, useNavigate } from "react-router-dom";
 import { OrganickContext } from "../../context";
+import { GrAddCircle } from "react-icons/gr";
 const Product = ({ el }) => {
-  const nav = useNavigate()
-  const {basket,setBasket} = useContext(OrganickContext)
-  const someBasket = basket.some((item) => item._id === el._id)
-  function AddToBasket(item){
-    if(someBasket){
+  const nav = useNavigate();
+  const { basket, setBasket } = useContext(OrganickContext);
+  function AddToBasket(item) {
+    let some = basket.some((el) => el._id === item._id);
+    if (some) {
       let res = basket.map((el) => {
-        return {...el,}
-      })
+        return { ...el, quantity: el.quantity + 1 };
+      });
+      setBasket(res);
+      localStorage.setItem("basket", JSON.stringify(res));
+    } 
+    else if (basket.length === 5) {
+      alert("404");
+    } 
+    else {
+      item.quantity = 1;
+      let res = [...basket, item];
+      setBasket(res);
+      localStorage.setItem("basket", JSON.stringify(res));
     }
-
   }
+
   return (
     <>
       <section id="home">
@@ -22,17 +33,21 @@ const Product = ({ el }) => {
           <div className="home">
             <div className="home--card" data-aos="zoom-in-up">
               <button>{el.category}</button>
-              <Link to={"/basket"}><a>
-                <LiaOpencart />
-              </a></Link>
-                <img src={el.url} alt="img" onClick={() => nav(`/productDetail/${el._id}`)}/>
-                 <h3>{el.name}</h3>
+              <a onClick={() => AddToBasket(el)}>
+              <GrAddCircle/>
+              </a>
+              <img
+                src={el.url}
+                alt="img"
+                onClick={() => nav(`/productDetail/${el._id}`)}
+              />
+              <h3>{el.name[0].toUpperCase() + el.name.slice(1)}</h3>
               <hr />
               <div className="home--card__price">
                 <h4>{el.price}$</h4>
                 <div className="home--card__price--rating">
                   <img src={star} alt="img" />
-                  <h4>{el.rating}</h4>
+                  <h4>0.{el.rating}</h4>
                 </div>
               </div>
             </div>
