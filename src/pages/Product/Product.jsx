@@ -41,7 +41,7 @@ const Product = ({ el }) => {
                 alt="img"
                 onClick={() => nav(`/productDetail/${el._id}`)}
               />
-              <h3>{el.name[0].toUpperCase() + el.name.slice(1)}</h3>
+              <h3>{el.name}</h3>
               <hr />
               <div className="home--card__price">
                 <h4>{el.price}$</h4>

@@ -34,7 +34,7 @@ const Basket = () => {
                   <a onClick={() => AddToBasket(el)}>
                     <CiCircleMinus />
                   </a>
-                  <h3>{el.name[0].toUpperCase() + el.name.slice(1)}</h3>
+                  <h3>{el.name}</h3>
                   <div className="Basket--basket__card--right__price">
                     <h4>0.{el.price * el.quantity}$</h4>
                     <div className="Basket--basket__card--right__price--rating">

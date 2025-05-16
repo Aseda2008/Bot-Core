@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 #header {
   background: #ffffffcb;
-  padding-block: 10px;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -15,7 +14,7 @@
     }
     &--nav {
       display: flex;
-      padding: 50px;
+      padding: 30px;
       gap: 30px;
       @media (max-width: 900px) {
         display: none;

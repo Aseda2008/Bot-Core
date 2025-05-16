@@ -8,12 +8,13 @@ import Aboute from "./pages/About/about";
 import Admin from "./pages/Admin/admin";
 import News from "./pages/News/News";
 import AOS from "aos";
-import 'aos/dist/aos.css'; // <-- Бул сөзсүз керек
+import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
 import Shop from "./pages/Shop/Shop";
 import NewsDatail from "./pages/NewsDatail/NewsDatail";
 import CardDetails from "./pages/CardDetails/CardDetails";
 import Basket from "./pages/Backet/basket";
+import ServiceDetails from "./pages/ServicesDetails/Services";
 
 function App() {
     useEffect(() => {
@@ -31,9 +32,12 @@ function App() {
         { id: 5, link: "/shop", el: <Shop/> },
         { id: 6, link: "/newsDetail/:id", el: <NewsDatail/> },
         { id: 7, link: "/productDetail/:shopId", el: <CardDetails/> },
-        { id: 8, link: "/basket", el:<Basket/>
+        { id: 8, link: "/basket", el:<Basket/>},
+        { id: 9, link: "/ServiceDetails/:shopId", el:<ServiceDetails/>},
+        
+
             
-         },
+         
     ];
 
     return (
