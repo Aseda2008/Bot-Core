@@ -95,7 +95,6 @@ console.log(detail);
       <div class="service--organick__cricle">
         <a href="https://www.youtube.com/watch?v=UnuP4vrLvc4"><BsCaretRightFill/></a>
       </div>
-       
       </div>
     </div>
   );

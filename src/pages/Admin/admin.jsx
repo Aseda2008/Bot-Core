@@ -9,7 +9,11 @@ const Admin = () => {
   const [ category,setCategory] = useState("")
 
   function setProduc() {
-    let NewData = {
+    if(!proUrl || !prodes || !proname || !proprice || !category){
+      alert("404")
+    }
+ else{
+     let NewData = {
       url: proUrl,
       name: proname,
       des: prodes,
@@ -19,9 +23,15 @@ const Admin = () => {
       quantity:1,
     };
     axios.post(
-      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick`,
+      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick?per_page=100`,
       NewData
     );
+    setCategory(""),
+    setProDes(""),
+    setProName(""),
+    setProUrl(""),
+    setProprice("")
+ }
   }
 
   return (
@@ -32,26 +42,31 @@ const Admin = () => {
             type="text"
             placeholder="Name"
             onChange={(e) => setProName(e.target.value)}
+            value={proname}
           />
           <input
             type="text"
             placeholder="Price"
             onChange={(e) => setProprice(e.target.value)}
+            value={proprice}
           />
           <input
             type="text"
             placeholder="url"
             onChange={(e) => setProUrl(e.target.value)}
+            value={proUrl}
           />
            <input
             type="text"
             placeholder="category"
             onChange={(e) => setCategory(e.target.value)}
+            value={category}
           />
           <input
             type="text"
             placeholder="description"
             onChange={(e) => setProDes(e.target.value)}
+            value={prodes}
           />
 
           <center>

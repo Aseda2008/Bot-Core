@@ -103,52 +103,62 @@
         font-size: 20px;
         font-weight: 700;
       }
-    &__btn{
+      &__btn {
         display: flex;
         gap: 35px;
-button {
-  width: 180px;
-  margin-top: 30px;
-  height: 50px;
-  background: linear-gradient(135deg, #274c5b, #3b6b85); // Градиент
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 1px;
-  font-weight: 600;
+        button {
+          width: 180px;
+          margin-top: 30px;
+          height: 50px;
+          background: linear-gradient(135deg, #274c5b, #3b6b85); // Градиент
+          border-radius: 10px;
+          color: white;
+          font-size: 15px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-family: "Inter", sans-serif;
+          letter-spacing: 1px;
+          font-weight: 600;
 
-  &:hover {
-    background: linear-gradient(135deg, #1f3d4a, #345e70); // Градиент өзгөрөт
-    transform: scale(1.07) translateY(-2px); // Чоңоёт жана көтөрүлөт
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); // Терең көлөкө
-  }
+          &:hover {
+            background: linear-gradient(
+              135deg,
+              #1f3d4a,
+              #345e70
+            ); // Градиент өзгөрөт
+            transform: scale(1.07) translateY(-2px); // Чоңоёт жана көтөрүлөт
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); // Терең көлөкө
+          }
 
-  &:active {
-    transform: scale(1) translateY(0); // Нормалга кайтуу басканда
-    box-shadow: none;
-  }
+          &:active {
+            transform: scale(1) translateY(0); // Нормалга кайтуу басканда
+            box-shadow: none;
+          }
 
-  &:focus {
-    outline: 2px solid #88c0d0; // Жеңил көк контур
-    outline-offset: 3px;
-  }
-}
-
-
-    }
+          &:focus {
+            outline: 2px solid #88c0d0; // Жеңил көк контур
+            outline-offset: 3px;
+          }
+        }
+      }
       &__bar {
         width: 400px;
         height: 20px;
         background: rgba(128, 128, 128, 0.45);
         border-radius: 10px;
+        p {
+          margin: 0 10px;
+        }
         &--full {
           width: 20%;
           height: 100%;
           border-radius: 10px;
+
+        }p{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
         }
       }
       &__totalPriceBlock {

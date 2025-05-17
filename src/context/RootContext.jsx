@@ -7,7 +7,7 @@ const RootContext = ({ children }) => {
   const [basket, setBasket] = useState([]);
   async function getProduc() {
     let res = await axios(
-      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick`
+      `https://api-crud.elcho.dev/api/v1/8cc4b-540d7-5f885/organick?per_page=100`
     );
     let { data } = res.data;
     setOrganick(data);

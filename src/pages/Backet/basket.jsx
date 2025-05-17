@@ -5,6 +5,7 @@ import { CiCircleMinus } from "react-icons/ci";
 import { TbBackground } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { color } from "framer-motion";
 
 const Basket = () => {
   const { basket,setBasket } = useContext(OrganickContext);
@@ -52,17 +53,7 @@ const Basket = () => {
             ))}
           </div>
           <div class="Basket--block">
-            <h1>{basket.length === 1
-                      ? "20%"
-                      : basket.length === 2
-                      ? "40%"
-                      : basket.length === 3
-                      ? "60%"
-                      : basket.length === 4
-                      ? "80%"
-                      : basket.length === 5
-                      ? "100%"
-                      : "0%"}</h1>
+        
             <div class="Basket--block__bar">
               <div
                 class="Basket--block__bar--full"
@@ -90,9 +81,26 @@ const Basket = () => {
                       ? "80%"
                       : basket.length === 5
                       ? "100%"
-                      : null, 
+                      : null,
+                      color:"white"
+                      
+
                 }}
-              ></div>
+              >
+                  <p>
+                  {basket.length === 1
+                      ? "20%"
+                      : basket.length === 2
+                      ? "40%"
+                      : basket.length === 3
+                      ? "60%"
+                      : basket.length === 4
+                      ? "80%"
+                      : basket.length === 5
+                      ? "100%"
+                      : "0%"}
+                      </p>
+              </div>
             </div>
             <div class="Basket--block__totalPriceBlock">
             <div class="Basket--block__totalPriceBlock--totalPrice">
