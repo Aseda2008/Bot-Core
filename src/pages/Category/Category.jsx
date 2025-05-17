@@ -2,7 +2,7 @@ import { img } from 'framer-motion/client';
 import React from 'react';
 import star from "../../assets/img/img20.png";
 
-const Caregory = () => {
+const Category = () => {
     let data = [
         {id:1,
         img:"https://pngfile.net/public/uploads/preview/carrot-vegetable-png-image-4381743279962vpuwufrwy5.png",
@@ -61,4 +61,4 @@ const Caregory = () => {
     );
 };
 
-export default Caregory;
+export default Category;

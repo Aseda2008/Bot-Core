@@ -5,6 +5,7 @@ import banner from "../../assets/img/Banner.svg";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import star from "../../assets/img/img20.png";
 import { Link } from "react-router-dom";
+import Category from "../Category/Category";
 
 const CardDetails = () => {
   const { shopId } = useParams();
@@ -98,6 +99,7 @@ const CardDetails = () => {
           </p>
         </div>
       </div>
+     <Category/>
     </div>
   );
 };
