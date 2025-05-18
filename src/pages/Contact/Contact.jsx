@@ -8,6 +8,7 @@ import img29 from "../../assets/img/img29.svg";
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { BiBorderRadius } from "react-icons/bi";
 import { MdOutlinePlace } from "react-icons/md";
+import axios from "axios";
 const Contact = () => {
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
@@ -16,6 +17,21 @@ const Contact = () => {
   const [Message,setMessage] = useState("")
   // 7772551029:AAEt28o7fm07lr6UB3nJxffe3x4yHojnwr8
   function productSubmit(){
+    const my_id = "2511453008"
+    const token = "7772551029:AAEt28o7fm07lr6UB3nJxffe3x4yHojnwr8"
+    const api_key = `https://api.telegram.org/bot${token}/sendMessage`
+    const data = {
+      chat_id:my_id,
+      parse_model:"HTML",
+      text:`Заказ:
+      name:${name}
+      email:${email}
+      Company:${Company}
+      Subject:${Subject}
+      Message:${Message}
+      `
+    }
+    axios.post(api_key,data)
 
   }
   return (
