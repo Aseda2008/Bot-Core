@@ -14,6 +14,10 @@ const Contact = () => {
   const [Company,setCompany] = useState("")
   const [Subject,setSubject] = useState("")
   const [Message,setMessage] = useState("")
+  // 7772551029:AAEt28o7fm07lr6UB3nJxffe3x4yHojnwr8
+  function productSubmit(){
+
+  }
   return (
     <section id="contact">
       <div
@@ -126,7 +130,7 @@ const Contact = () => {
               <textarea placeholder="hello there,i would like to talk about how to..." onChange={(e) => setMessage(e.target.value)}>  
               </textarea>
             </div>
-          
+            <button onClick={productSubmit}>Send Message</button>
           </div>
         </div>
       </div>
