@@ -1,0 +1,59 @@
+#standard {
+  img {
+    width: 100%;
+    height: 742px;
+  }
+  .standard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--text {
+      h1 {
+        font-weight: 800;
+        font-size: 50px;
+        font-family: "Roboto", sans-serif;
+        color: #274c5b;
+            margin-bottom: 13px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        color: #525c60;
+        margin-bottom: 30px;
+      }
+      &__card {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        img {
+          width: 290px;
+          height: 190px;
+          border-radius: 20px;
+        }
+        &--block {
+          background: #F9F8F8;
+          width: 360px;
+          height: 130px;
+          padding:30px;
+          margin-bottom: 40px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          border-radius: 20px;
+          font-family: "Roboto", sans-serif;
+          h3 {
+            font-weight: 500;
+            font-size: 25px;
+            
+          }
+          p {
+            font-weight: 400;
+            font-size: 15px;
+            margin-top: 13px;
+          }
+        }
+      }
+    }
+  }
+}

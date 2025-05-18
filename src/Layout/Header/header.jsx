@@ -31,6 +31,7 @@ const Header = () => {
             <Link to={"/"}>Projects</Link>
             <Link to={"/news"}>News</Link>
             <Link to={"/admin"}>Admin</Link>
+            <Link to={"/contant"}>Content</Link>
           </div>
        <div className="header--block">
           <Link to={"/basket"}>

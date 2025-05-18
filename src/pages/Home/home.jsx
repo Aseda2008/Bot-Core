@@ -25,6 +25,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Product from "../Product/Product";
 import { FaCircleArrowRight, FaUser } from "react-icons/fa6";
 import { newData } from "../../Data";
+import { img } from "framer-motion/client";
+import Category from "../Category/Category";
 const Home = () => {
   const { organick } = useContext(OrganickContext);
   const [count, setCount] = useState(4);
@@ -32,18 +34,41 @@ const Home = () => {
   const handleReadMore = (id) => {
     nav(`/newsDetail/${id}`);
   };
+  const allCategories = [
+    {
+      id: 1,
+      title: "Vegetable",
+      img: "https://img.pikbest.com/png-images/20240830/3d-vegetables-a-clean-and-modern-presentation_10777794.png!bw700",
+    },
+    {
+      id: 2,
+      title: "Fresh",
+      img: "https://png.pngtree.com/png-clipart/20240314/original/pngtree-3d-fruit-fresh-png-image_14591543.png",
+    },
+    {
+      id: 3,
+      title: "Nuts",
+      img: "https://png.pngtree.com/png-vector/20250327/ourmid/pngtree-3d-a-mixed-nuts-displayon-realistic-png-image_15887028.png",
+    },
+    {
+      id: 4,
+      title: "Health",
+      img: "https://png.pngtree.com/png-vector/20241203/ourmid/pngtree-buckwheat-png-image_14647414.png",
+    },
+  ];
   return (
     <>
       <section id="home">
-        <div className="homeBg"
+        <div
+          className="homeBg"
           style={{
             background: `url(${img14}) no-repeat center/cover`,
             width: "100%",
             height: "80vh",
           }}
         >
-          <div class="continer">
-            <div class="homeBg--text">
+          <div className="container">
+            <div className="homeBg--text">
               <img src={img15} alt="img" />
               <h1>
                 Choose the best <br />
@@ -57,16 +82,16 @@ const Home = () => {
           </div>
         </div>
         <div className="blocks">
-          <div class="continer">
+          <div className="container">
             <div className="blocks--block2">
               <img src={img1} alt="img" data-aos="fade-right" />
               <img src={img2} data-aos="fade-left" />
             </div>
           </div>
         </div>
-        <div class="working">
-          <div class="container">
-            <div class="working--block">
+        <div className="working">
+          <div className="container">
+            <div className="working--block">
               <img
                 src={img3}
                 alt="img"
@@ -74,7 +99,7 @@ const Home = () => {
                   width: "clamp(10rem,50vw, 51rem)",
                 }}
               />
-              <div class="working--block__text">
+              <div className="working--block__text">
                 <img
                   src={img4}
                   alt="img"
@@ -92,7 +117,7 @@ const Home = () => {
                   text <br />
                   ever since the 1500s, when an unknown printer took a galley.
                 </p>
-                <div class="working--block__text--card">
+                <div className="working--block__text--card">
                   <img
                     src={img5}
                     alt="img"
@@ -100,7 +125,7 @@ const Home = () => {
                       width: "clamp(2rem, 7vw, 7.1rem)",
                     }}
                   />
-                  <div class="working--block__text--card__foods">
+                  <div className="working--block__text--card__foods">
                     <h3>Organic Foods Only</h3>
                     <p>
                       Simply dummy text of the printing and typesetting <br />
@@ -108,7 +133,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-                <div class="working--block__text--card">
+                <div className="working--block__text--card">
                   <img
                     src={img6}
                     alt="img"
@@ -116,7 +141,7 @@ const Home = () => {
                       width: "clamp(2rem, 7vw, 7.1rem)",
                     }}
                   />
-                  <div class="working--block__text--card__foods">
+                  <div className="working--block__text--card__foods">
                     <h3>Organic Foods Only</h3>
                     <p>
                       Simply dummy text of the printing and typesetting <br />
@@ -130,6 +155,20 @@ const Home = () => {
                   </button>
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="category">
+          <div className="container">
+            <div className="category">
+              {allCategories.map((el) => (
+                <div className="category--block">
+                  <Link to={`/Category/${el.title}`}>
+                    <img src={el.img} alt="img" />
+                  </Link>
+                  <h3>{el.title}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -154,15 +193,17 @@ const Home = () => {
             )}
           </center>
         </div>
-        <div class="testimonial"
+
+        <div
+          className="testimonial"
           style={{
             background: `url(${img16}) no-repeat center/cover`,
             height: "120vh",
             marginTop: "30px",
           }}
         >
-          <div class="container">
-            <div class="testimonial">
+          <div className="container">
+            <div className="testimonial">
               <img src={img17} alt="img" width={"100px"} />
               <h1>What Our Customer Saying?</h1>
               <img
@@ -174,8 +215,8 @@ const Home = () => {
                   borderRadius: "50%",
                 }}
               />
-              <div class="testimonial--stars">
-                <div class="testimonial--stars__star">
+              <div className="testimonial--stars">
+                <div className="testimonial--stars__star">
                   <img
                     src={img19}
                     alt="img"
@@ -192,33 +233,33 @@ const Home = () => {
                 text of the printing and typesetting industry. Lorem Ipsum has
                 been.
               </p>
-              <hr/>
+              <hr />
               <h3>
                 Sara Taylor
                 <br />
                 <span>Consumer</span>
               </h3>
-              <div class="testimonial--circles">
-                <div class="testimonial--circles__circle">
-                  <div class="testimonial--circles__circle--from">
+              <div className="testimonial--circles">
+                <div className="testimonial--circles__circle">
+                  <div className="testimonial--circles__circle--from">
                     <h1>100%</h1>
                     <span>Organic</span>
                   </div>
                 </div>
-                <div class="testimonial--circles__circle">
-                  <div class="testimonial--circles__circle--from">
+                <div className="testimonial--circles__circle">
+                  <div className="testimonial--circles__circle--from">
                     <h1>285</h1>
                     <span>Active Product</span>
                   </div>
                 </div>
-                <div class="testimonial--circles__circle">
-                  <div class="testimonial--circles__circle--from">
+                <div className="testimonial--circles__circle">
+                  <div className="testimonial--circles__circle--from">
                     <h1>350+</h1>
                     <span>Organic Orchads</span>
                   </div>
                 </div>
-                    <div class="testimonial--circles__circle">
-                  <div class="testimonial--circles__circle--from">
+                <div className="testimonial--circles__circle">
+                  <div className="testimonial--circles__circle--from">
                     <h1>25+</h1>
                     <span>Years of Farming</span>
                   </div>
@@ -229,8 +270,8 @@ const Home = () => {
         </div>
         <div className="organick">
           <div className="organick--top">
-            <div class="organick--top__cards">
-              <div class="organick--top__cards--card">
+            <div className="organick--top__cards">
+              <div className="organick--top__cards--card">
                 <img src={img7} alt="img" />
                 <h1>We Offer Organic For You</h1>
               </div>
@@ -239,20 +280,20 @@ const Home = () => {
                 <FaCircleArrowRight />
               </button>
             </div>
-            <div class="organick--top__block">
-              {organick?.slice(0, count).map((el) => (
-                el.rating >= 4 ? <Product el={el} /> : null
-              ))}
+            <div className="organick--top__block">
+              {organick
+                ?.slice(0, count)
+                .map((el) => (el.rating >= 4 ? <Product el={el} /> : null))}
             </div>
           </div>
         </div>
-        <div class="store">
+        <div className="store">
           <img
             src={img8}
             alt="img"
             style={{ width: "clamp(10rem, 58vw, 58.1rem)" }}
           />
-          <div class="store--block">
+          <div className="store--block">
             <img
               src={img9}
               alt="img"
@@ -282,9 +323,9 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div class="OrganicProducts">
+        <div className="OrganicProducts">
           <div
-            class="OrganickProduct--card"
+            className="OrganickProduct--card"
             style={{
               position: "relative",
               width: "clamp(3rem, 30vw, 35rem)",
@@ -316,7 +357,7 @@ const Home = () => {
             </button>
           </div>
           <div
-            class="OrganickProduct--card"
+            className="OrganickProduct--card"
             style={{
               position: "relative",
               width: "clamp(3rem, 30vw, 35rem)",
@@ -348,7 +389,7 @@ const Home = () => {
             </button>
           </div>
           <div
-            class="OrganickProduct--card"
+            className="OrganickProduct--card"
             style={{
               position: "relative",
               width: "clamp(3rem, 30vw, 35rem)",
@@ -380,9 +421,9 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div class="container">
-          <div class="RecentNews--top">
-            <div class="RecentNews--top__text">
+        <div className="container">
+          <div className="RecentNews--top">
+            <div className="RecentNews--top__text">
               <img
                 src={img13}
                 alt="img"
@@ -399,9 +440,9 @@ const Home = () => {
               </button>
             </Link>
           </div>
-          <div class="RecentNews">
+          <div className="RecentNews">
             {newData.slice(0, 2).map((el) => (
-              <div class="RecentNews--newsCard">
+              <div className="RecentNews--newsCard">
                 <img
                   src={el.image}
                   alt="img"
@@ -410,8 +451,8 @@ const Home = () => {
                     height: "clamp(9rem, 30vw, 35rem)",
                   }}
                 />
-                <div class="RecentNews--newsCard__newText">
-                  <div class="RecentNews--newsCard__newText--MyCard">
+                <div className="RecentNews--newsCard__newText">
+                  <div className="RecentNews--newsCard__newText--MyCard">
                     <a>
                       <FaUser />
                     </a>

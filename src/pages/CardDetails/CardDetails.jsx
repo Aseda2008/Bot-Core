@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { OrganickContext } from "../../context";
-import banner from "../../assets/img/Banner.svg";
+import banner from "../../assets/img/bannerPNG.png";
 import { IoArrowForwardCircle } from "react-icons/io5";
 import star from "../../assets/img/img20.png";
 import { Link } from "react-router-dom";
@@ -18,16 +18,15 @@ const CardDetails = () => {
   }
   useEffect(() => {
     getDeatails();
-  }, []);
+  }, [organick]);
   return (
     <div id="Details">
       <div
         className="banner"
         style={{
-          background: `url(${banner}) no-repeat center`,
-          backgroundPosition: "center",
-          height: "70vh",
-          marginBottom: "30px",
+          background: `url(${banner}) no-repeat center/cover`,
+          width: "100%",
+          height: "40vh",
         }}
       ></div>
       <div className="container">
@@ -73,20 +72,22 @@ const CardDetails = () => {
             >
               Product Description
             </button>
-<Link to={`/ServiceDetails/${productDateli?._id}`}>  <button
-    style={{
-      background: "#EFF6F1",
-      color: "#274c5b",
-      fontSize: "15px",
-      width: "250px",
-      padding: "5px",
-      height: "50px",
-      borderRadius: "10px",
-    }}
-  >
-    Additional Info
-  </button></Link>
-
+            <Link to={`/ServiceDetails/${productDateli?._id}`}>
+              {" "}
+              <button
+                style={{
+                  background: "#EFF6F1",
+                  color: "#274c5b",
+                  fontSize: "15px",
+                  width: "250px",
+                  padding: "5px",
+                  height: "50px",
+                  borderRadius: "10px",
+                }}
+              >
+                Additional Info
+              </button>
+            </Link>
           </div>
           <p>
             Welcome to the world of natural and organic. Here you can discover
@@ -99,7 +100,7 @@ const CardDetails = () => {
           </p>
         </div>
       </div>
-     <Category/>
+      <Category />
     </div>
   );
 };

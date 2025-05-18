@@ -15,6 +15,9 @@ import NewsDatail from "./pages/NewsDatail/NewsDatail";
 import CardDetails from "./pages/CardDetails/CardDetails";
 import Basket from "./pages/Backet/basket";
 import ServiceDetails from "./pages/ServicesDetails/Services";
+import Category from "./pages/Category/Category";
+import Standard from "./pages/Standard/Standard";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
     useEffect(() => {
@@ -34,6 +37,9 @@ function App() {
         { id: 7, link: "/productDetail/:shopId", el: <CardDetails/> },
         { id: 8, link: "/basket", el:<Basket/>},
         { id: 9, link: "/ServiceDetails/:shopId", el:<ServiceDetails/>},
+        { id: 10, link: "/Category/:catName", el:<Category/>},
+        { id: 11, link: "/Standard", el:<Standard/>},
+        { id: 12, link: "/contant", el:<Contact/>},
         
 
             

@@ -28,7 +28,7 @@ const Product = ({ el }) => {
 
   return (
     <>
-      <section id="home">
+      <div id="home">
         <div className="container">
           <div className="home">
             <div className="home--card" data-aos="zoom-in-up">
@@ -53,7 +53,7 @@ const Product = ({ el }) => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };

@@ -126,18 +126,18 @@
               135deg,
               #1f3d4a,
               #345e70
-            ); // Градиент өзгөрөт
-            transform: scale(1.07) translateY(-2px); // Чоңоёт жана көтөрүлөт
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); // Терең көлөкө
+            ); 
+            transform: scale(1.07) translateY(-2px); 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
           }
 
           &:active {
-            transform: scale(1) translateY(0); // Нормалга кайтуу басканда
+            transform: scale(1) translateY(0); 
             box-shadow: none;
           }
 
           &:focus {
-            outline: 2px solid #88c0d0; // Жеңил көк контур
+            outline: 2px solid #88c0d0;
             outline-offset: 3px;
           }
         }

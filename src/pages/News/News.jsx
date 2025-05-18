@@ -11,16 +11,15 @@ const News = () => {
   };
 
   return (
-    <div
-      id="RecentNews">
-    <div class="RecentNewsBanner"       
-    style={{
-        background: `url(${Banner}) no-repeat center`,
-        backgroundPosition: "center",
-        height: "70vh",
-      }}>
-
-    </div>
+    <div id="RecentNews">
+      <div
+        class="RecentNewsBanner"
+        style={{
+          background: `url(${Banner}) no-repeat center/cover`,
+          width: "100%",
+          height: "50vh",
+        }}
+      ></div>
       <div className="container">
         <div className="RecentNews">
           {newData.map((el) => (

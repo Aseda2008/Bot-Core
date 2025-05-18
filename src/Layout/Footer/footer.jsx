@@ -46,7 +46,6 @@ const Footer = () => {
                 <a><FaFacebook /></a>
                 <a><FaTwitter /></a>
                 <a><FaPinterestP /></a>
-               
               </div>
             </div>
             <div className="card--line"></div>
